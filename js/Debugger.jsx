@@ -1,8 +1,8 @@
 const React = require('react')
 
 const Debugger = (props) => (
-  <pre>
-    <code style={{textAlign: 'left'}}>
+  <pre style={{textAlign: 'left'}}>
+    <code>
       {JSON.stringify(props, null, 4)}
     </code>
   </pre>
