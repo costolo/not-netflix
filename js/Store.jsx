@@ -32,4 +32,4 @@ const mapDispatchToProps = (dispatch) => {
 
 const connector = connect(mapStateToProps, mapDispatchToProps)
 
-export { connector, store }
+export { connector, store, rootReducer }
