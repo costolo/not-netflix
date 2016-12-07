@@ -1,4 +1,4 @@
-import { createStore } from 'redux'
+import { createStore, compose } from 'redux'
 import { connect } from 'react-redux'
 
 const SET_SEARCH_TERM = 'setSearchTerm'
@@ -14,8 +14,11 @@ const rootReducer = (state = initialState, action) => {
       return state
   }
 }
-
-const store = createStore(rootReducer)
+// just use const store = createStore(rootReducer) in production
+const store = createStore(rootReducer, initialState, compose(
+  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
+  ? window.devToolsExtension() : (f) => f
+))
 
 const mapStateToProps = (state) => ({searchTerm: state.searchTerm})
 
