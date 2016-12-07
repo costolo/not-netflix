@@ -4,8 +4,8 @@ import { connector } from './Store'
 const { func, bool, string } = React.PropTypes
 
 class Header extends React.Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this)
   }
 
