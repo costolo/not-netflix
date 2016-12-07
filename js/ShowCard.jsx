@@ -19,6 +19,7 @@ ShowCard.propTypes = {
   title: string.isRequired,
   year: string.isRequired,
   description: string.isRequired,
+  imdbID: string.isRequired,
   poster: string.isRequired
 }
 
