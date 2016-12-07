@@ -8,6 +8,8 @@ const Search = require('./Search')
 const Landing = require('./Landing')
 const Layout = require('./Layout')
 const Details = require('./Details')
+const { store } = require('./Store')
+const { Provider } = require('react-redux')
 
 const App = React.createClass({
   assignShow (nextState, replace) {
