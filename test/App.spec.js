@@ -1,13 +1,13 @@
 /* eslint-env mocha */
+import { expect } from 'chai'
+import React from 'react'
+import Search from '../js/Search'
+import ShowCard from '../js/ShowCard'
+import { shows } from '../public/data'
+import { shallow, mount } from 'enzyme'
+import { store, rootReducer } from '../js/Store'
 
-const { expect } = require('chai')
-const React = require('react')
-const Search = require('../js/Search')
-const ShowCard = require('../js/ShowCard')
-const { shows } = require('../public/data')
-const { shallow, mount } = require('enzyme')
-
-describe('<Search />', () => {
+xdescribe('<Search />', () => {
   it('should render the brand', () => {
     const wrapper = shallow(<Search />)
     expect(wrapper.contains(<h1 className='brand'>not netflix</h1>)).to.be.true
