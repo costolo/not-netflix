@@ -1,12 +1,47 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
+import { connector } from './Store'
+const { func, string } = React.PropTypes
 
-const Landing = () => (
-  <div className='home-info'>
-    <h1 className='title'>svideo</h1>
-    <input className='search' type='text' placeholder='search' />
-    <Link to='/search' className='browse-all'> or browse all</Link>
-  </div>
-)
+class Landing extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this)
+    this.gotoSearch = this.gotoSearch.bind(this)
+    this.seeAll = this.seeAll.bind(this)
+  }
 
-export default Landing
+  handleSearchTermEvent (e) {
+    this.props.setSearchTerm(e.target.value)
+  }
+
+  seeAll () {
+    this.props.setSearchTerm('')
+  }
+
+  gotoSearch (e) {
+    hashHistory.push('search')
+    e.preventDefault()
+  }
+
+  render () {
+    return (
+      <div className='home-info'>
+        <h1 className='title'>svideo</h1>
+        <form onSubmit={this.gotoSearch}>
+          <input value={this.props.searchTerm} onChange={this.handleSearchTermEvent}
+            className='search' type='text' placeholder='search' />
+        </form>
+        <Link to='/search' onClick={this.seeAll} className='browse-all'> or browse all</Link>
+      </div>
+    )
+  }
+}
+
+Landing.propTypes = {
+  setSearchTerm: func,
+  seAll: func,
+  searchTerm: string
+}
+
+export default connector(Landing)
