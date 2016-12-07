@@ -1,8 +1,8 @@
-const React = require('react')
-const ShowCard = require('./ShowCard')
-const Header = require('./Header')
+import React from 'react'
+import ShowCard from './ShowCard'
+import Header from './Header'
+import { connector } from './Store'
 const { object, string } = React.PropTypes
-const { connector } = require('./Store')
 
 const Search = (props) => (
   <div className='container'>
@@ -22,4 +22,4 @@ Search.propTypes = {
   searchTerm: string
 }
 
-module.exports = connector(Search)
+export default connector(Search)

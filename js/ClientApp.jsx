@@ -1,15 +1,15 @@
-const React = require('react')
-const ReactDOM = require('react-dom')
-const { Router, Route, hashHistory, IndexRoute } = require('react-router')
-const { shows } = require('../public/data')
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { shows } from '../public/data'
 
 // components
-const Search = require('./Search')
-const Landing = require('./Landing')
-const Layout = require('./Layout')
-const Details = require('./Details')
-const { store } = require('./Store')
-const { Provider } = require('react-redux')
+import Search from './Search'
+import Landing from './Landing'
+import Layout from './Layout'
+import Details from './Details'
+import { store } from './Store'
+import { Provider } from 'react-redux'
 
 const App = React.createClass({
   assignShow (nextState, replace) {

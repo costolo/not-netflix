@@ -1,5 +1,5 @@
-const React = require('react')
-const { Link } = require('react-router')
+import React from 'react'
+import { Link } from 'react-router'
 
 const Landing = () => (
   <div className='home-info'>
@@ -9,4 +9,4 @@ const Landing = () => (
   </div>
 )
 
-module.exports = Landing
+export default Landing

@@ -1,7 +1,7 @@
-const React = require('react')
+import React from 'react'
+import { Link } from 'react-router'
+import { connector } from './Store'
 const { func, bool, string } = React.PropTypes
-const { Link } = require('react-router')
-const { connector } = require('./Store')
 
 class Header extends React.Component {
   constructor () {
@@ -46,4 +46,4 @@ Header.propTypes = {
   searchTerm: string
 }
 
-module.exports = connector(Header)
+export default connector(Header)

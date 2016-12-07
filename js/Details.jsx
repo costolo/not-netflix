@@ -1,5 +1,5 @@
-const React = require('react')
-const Header = require('./Header')
+import React from 'react'
+import Header from './Header'
 const { object } = React.PropTypes
 
 class Details extends React.Component {
@@ -27,4 +27,4 @@ Details.propTypes = {
   params: object.isRequired
 }
 
-module.exports = Details
+export default Details

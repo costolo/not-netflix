@@ -1,4 +1,4 @@
-const React = require('react')
+import React from 'react'
 const { string } = React.PropTypes
 
 const ShowCard = (props) => (
@@ -19,4 +19,4 @@ ShowCard.propTypes = {
   poster: string.isRequired
 }
 
-module.exports = ShowCard
+export default ShowCard
