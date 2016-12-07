@@ -19,10 +19,10 @@ const store = redux.createStore(rootReducer)
 
 const mapStateToProps = (state) => ({searchTerm: state.searchTerm})
 
-const mapDispatchToProps = (dispatcher) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     setSearchTerm (searchTerm) {
-      dispatcher({type: SET_SEARCH_TERM, value: searchTerm})
+      dispatch({type: SET_SEARCH_TERM, value: searchTerm})
     }
   }
 }
