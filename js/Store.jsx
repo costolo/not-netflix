@@ -22,8 +22,12 @@ const store = createStore(rootReducer, initialState, compose(
   ? window.devToolsExtension() : (f) => f
 ))
 
-const mapStateToProps = (state) => ({searchTerm: state.searchTerm})
-
+const mapStateToProps = (state) => {
+  return {
+    searchTerm: state.searchTerm,
+    shows: state.shows
+  }
+}
 const mapDispatchToProps = (dispatch) => {
   return {
     setSearchTerm (searchTerm) {
