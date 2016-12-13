@@ -1,9 +1,11 @@
 import { createStore, compose } from 'redux'
 import { connect } from 'react-redux'
+import { shows } from '../public/data'
 
 const SET_SEARCH_TERM = 'setSearchTerm'
 const initialState = {
-  searchTerm: ''
+  searchTerm: '',
+  shows
 }
 
 const rootReducer = (state = initialState, action) => {
