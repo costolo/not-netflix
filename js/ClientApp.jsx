@@ -25,4 +25,4 @@ const App = () => (
 
 App.Routes = Routes
 
-export default App
+export {App}
