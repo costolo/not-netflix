@@ -16,7 +16,7 @@ const port = 8000
 const baseTemplate = fs.readFileSync('./index.html')
 const template = _.template(baseTemplate)
 const ClientApp = require('./js/ClientApp.jsx')
-const Routes = ClientApp.App.Routes
+const Routes = ClientApp.Routes
 
 const app = express()
 
@@ -34,7 +34,7 @@ app.use((req, res) => {
           React.createElement(RouterContext, renderProps)
         )
       )
-      res.status(200).send(template({body}))
+      res.status(200).send(template({ body }))
     } else {
       res.status(404).send('not found')
     }

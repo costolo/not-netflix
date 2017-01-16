@@ -23,4 +23,4 @@ const App = () => (
 
 App.Routes = Routes
 
-export {App}
+module.exports = App
