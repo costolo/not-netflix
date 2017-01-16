@@ -17,9 +17,7 @@ const Routes = () => (
 
 const App = () => (
   <Provider store={store}>
-    <Router history={browserHistory}>
-      {Routes()}
-    </Router>
+    <Router history={browserHistory} routes={Routes()} />
   </Provider>
 )
 
