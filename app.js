@@ -23,7 +23,7 @@ const app = express()
 app.use('/public', express.static('./public'))
 
 app.use((req, res) => {
-  match({ routes: Routes(), location: req.url }, (err, redirectLocation, renderProps) => {
+  match({ routes: Routes, location: req.url }, (err, redirectLocation, renderProps) => {
     if (err) {
       res.status(500).send(err.message)
     } else if (redirectLocation) {
